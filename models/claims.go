@@ -5,7 +5,7 @@ import "github.com/dgrijalva/jwt-go"
 type JwtCustomClaims struct {
 	Email     string `json:"email"`
 	UserId    string `json:"userId"`
-	Role      string `json:"role"`
+	Role      Role   `json:"role"`
 	SessionId string `json:"sessionId"`
 }
 
