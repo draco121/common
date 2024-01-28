@@ -1,6 +1,9 @@
 package models
 
-import "go.mongodb.org/mongo-driver/bson/primitive"
+import (
+	"github.com/draco121/common/constants"
+	"go.mongodb.org/mongo-driver/bson/primitive"
+)
 
 type User struct {
 	Email     string             `json:"email"`
@@ -8,5 +11,5 @@ type User struct {
 	LastName  string             `json:"lastname"`
 	Password  string             `json:"password"`
 	ID        primitive.ObjectID `json:"id" bson:"_id"`
-	Role      Role               `json:"role"`
+	Role      constants.Role     `json:"role"`
 }
