@@ -1,8 +1,8 @@
 package constants
 
-type Grants string
+type Grant string
 
 const (
-	Allowed  = "allowed"
-	Rejected = "rejected"
+	Allowed  Grant = "allowed"
+	Rejected Grant = "rejected"
 )
