@@ -15,7 +15,7 @@ type userServiceApiClient struct {
 	client *resty.Client
 }
 
-func NewUserServiceApiClient(baseUrl string) *userServiceApiClient {
+func NewUserServiceApiClient(baseUrl string) IUserServiceApiClient {
 	c := resty.New()
 	c.BaseURL = baseUrl
 	client := userServiceApiClient{
