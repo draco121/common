@@ -1,6 +1,6 @@
 package constants
 
-type Actions string
+type Action string
 
 const (
 	Read   = "read"
