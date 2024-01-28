@@ -9,7 +9,7 @@ type IAuthenticationServiceApiClient interface {
 	Authenticate(token string) (*models.JwtCustomClaims, error)
 }
 
-type AuthenticationServiceApiClient struct {
+type authenticationServiceApiClient struct {
 	IAuthenticationServiceApiClient
 	client *resty.Client
 }
@@ -17,13 +17,13 @@ type AuthenticationServiceApiClient struct {
 func NewAuthenticationServiceApiClient(baseUrl string) IAuthenticationServiceApiClient {
 	c := resty.New()
 	c.BaseURL = baseUrl
-	client := AuthenticationServiceApiClient{
+	client := authenticationServiceApiClient{
 		client: c,
 	}
 	return &client
 }
 
-func (c *AuthenticationServiceApiClient) Authenticate(token string) (*models.JwtCustomClaims, error) {
+func (c *authenticationServiceApiClient) Authenticate(token string) (*models.JwtCustomClaims, error) {
 	claims := models.JwtCustomClaims{}
 	_, err := c.client.R().
 		SetResult(&claims).
