@@ -60,7 +60,7 @@ func VerfiyRefreshToken(refreshToken string) (*models.RefreshTokenClaims, error)
 
 	claims, ok := token.Claims.(*models.RefreshTokenClaims)
 	if !ok || !token.Valid {
-		return claims, fmt.Errorf("invalid refresh token")
+		return nil, fmt.Errorf("invalid refresh token")
 	}
 
 	return claims, nil
@@ -79,7 +79,7 @@ func VerifyJwtToken(jwtToken string) (*models.DefaultClaims, error) {
 
 	claims, ok := token.Claims.(*models.DefaultClaims)
 	if !ok || !token.Valid {
-		return claims, fmt.Errorf("invalid jwt token")
+		return nil, fmt.Errorf("invalid jwt token")
 	}
 
 	return claims, nil
